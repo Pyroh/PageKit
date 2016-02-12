@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PageNavigationViewController" customModule="PageKit" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="H5Z-cf-Hzj"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="37"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BtR-0b-O81">
+                    <rect key="frame" x="14" y="1" width="45" height="32"/>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSGoLeftTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kBr-mm-TNg">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="goBackward:" target="-2" id="dLC-c0-Gy8"/>
+                        <binding destination="-2" name="hidden" keyPath="self.canGoBackward" id="0zp-Jk-yqa">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ELS-Hw-02D">
+                    <rect key="frame" x="101" y="1" width="45" height="32"/>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSGoRightTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ch-ZT-fCr">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="goForward:" target="-2" id="28l-PL-dm5"/>
+                        <binding destination="-2" name="hidden" keyPath="self.canGoForward" id="ii0-1v-iKR">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wcx-Df-rWW">
+                    <rect key="frame" x="55" y="1" width="50" height="32"/>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSHomeTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5iJ-lX-qyj">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="goHome:" target="-2" id="z8e-Gu-YIT"/>
+                        <binding destination="-2" name="hidden" keyPath="self.canGoBackward" id="aqC-PO-9oM">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ELS-Hw-02D" secondAttribute="bottom" constant="8" id="2eN-OR-SAE"/>
+                <constraint firstItem="BtR-0b-O81" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="3on-eS-MD6"/>
+                <constraint firstAttribute="trailing" secondItem="ELS-Hw-02D" secondAttribute="trailing" constant="20" symbolic="YES" id="8Zm-BP-HrF"/>
+                <constraint firstItem="ELS-Hw-02D" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="Gfh-JH-BzX"/>
+                <constraint firstAttribute="bottom" secondItem="Wcx-Df-rWW" secondAttribute="bottom" constant="8" id="Mi4-dt-A1Z"/>
+                <constraint firstAttribute="bottom" secondItem="BtR-0b-O81" secondAttribute="bottom" constant="8" id="hLN-mR-7cs"/>
+                <constraint firstItem="BtR-0b-O81" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" symbolic="YES" id="jMT-dK-kNC"/>
+                <constraint firstItem="Wcx-Df-rWW" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="s6r-ZI-DQk"/>
+                <constraint firstItem="ELS-Hw-02D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wcx-Df-rWW" secondAttribute="trailing" constant="8" id="wke-1f-HAj"/>
+                <constraint firstItem="Wcx-Df-rWW" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="zIf-n6-ozx"/>
+                <constraint firstItem="Wcx-Df-rWW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BtR-0b-O81" secondAttribute="trailing" constant="8" id="zUe-R8-2FS"/>
+            </constraints>
+            <point key="canvasLocation" x="367" y="342.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSGoLeftTemplate" width="9" height="12"/>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
+        <image name="NSHomeTemplate" width="14" height="14"/>
+    </resources>
+</document>

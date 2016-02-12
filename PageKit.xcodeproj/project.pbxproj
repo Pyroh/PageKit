@@ -10,6 +10,12 @@
 		3F2AE0AE1C6E17CD007730C3 /* PageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F2AE0AD1C6E17CD007730C3 /* PageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F2AE0B51C6E17CD007730C3 /* PageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2AE0AA1C6E17CD007730C3 /* PageKit.framework */; };
 		3F2AE0BA1C6E17CD007730C3 /* PageKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE0B91C6E17CD007730C3 /* PageKitTests.swift */; };
+		3F2AE0CA1C6E1852007730C3 /* PagedViewCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE0C41C6E1852007730C3 /* PagedViewCollectionController.swift */; };
+		3F2AE0CB1C6E1852007730C3 /* PagedViewCollectionControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE0C51C6E1852007730C3 /* PagedViewCollectionControllerDelegate.swift */; };
+		3F2AE0CC1C6E1852007730C3 /* PagedViewCollectionNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE0C61C6E1852007730C3 /* PagedViewCollectionNavigationDelegate.swift */; };
+		3F2AE0CD1C6E1852007730C3 /* PagedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE0C71C6E1852007730C3 /* PagedViewController.swift */; };
+		3F2AE0CE1C6E1852007730C3 /* PageNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE0C81C6E1852007730C3 /* PageNavigationViewController.swift */; };
+		3F2AE0CF1C6E1852007730C3 /* PageNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AE0C91C6E1852007730C3 /* PageNavigationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		3F2AE0B41C6E17CD007730C3 /* PageKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2AE0B91C6E17CD007730C3 /* PageKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageKitTests.swift; sourceTree = "<group>"; };
 		3F2AE0BB1C6E17CD007730C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F2AE0C41C6E1852007730C3 /* PagedViewCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedViewCollectionController.swift; sourceTree = "<group>"; };
+		3F2AE0C51C6E1852007730C3 /* PagedViewCollectionControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedViewCollectionControllerDelegate.swift; sourceTree = "<group>"; };
+		3F2AE0C61C6E1852007730C3 /* PagedViewCollectionNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedViewCollectionNavigationDelegate.swift; sourceTree = "<group>"; };
+		3F2AE0C71C6E1852007730C3 /* PagedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedViewController.swift; sourceTree = "<group>"; };
+		3F2AE0C81C6E1852007730C3 /* PageNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNavigationViewController.swift; sourceTree = "<group>"; };
+		3F2AE0C91C6E1852007730C3 /* PageNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageNavigationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,12 @@
 		3F2AE0AC1C6E17CD007730C3 /* PageKit */ = {
 			isa = PBXGroup;
 			children = (
+				3F2AE0C41C6E1852007730C3 /* PagedViewCollectionController.swift */,
+				3F2AE0C51C6E1852007730C3 /* PagedViewCollectionControllerDelegate.swift */,
+				3F2AE0C61C6E1852007730C3 /* PagedViewCollectionNavigationDelegate.swift */,
+				3F2AE0C71C6E1852007730C3 /* PagedViewController.swift */,
+				3F2AE0C81C6E1852007730C3 /* PageNavigationViewController.swift */,
+				3F2AE0C91C6E1852007730C3 /* PageNavigationViewController.xib */,
 				3F2AE0AD1C6E17CD007730C3 /* PageKit.h */,
 				3F2AE0AF1C6E17CD007730C3 /* Info.plist */,
 			);
@@ -177,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2AE0CF1C6E1852007730C3 /* PageNavigationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2AE0CD1C6E1852007730C3 /* PagedViewController.swift in Sources */,
+				3F2AE0CA1C6E1852007730C3 /* PagedViewCollectionController.swift in Sources */,
+				3F2AE0CC1C6E1852007730C3 /* PagedViewCollectionNavigationDelegate.swift in Sources */,
+				3F2AE0CE1C6E1852007730C3 /* PageNavigationViewController.swift in Sources */,
+				3F2AE0CB1C6E1852007730C3 /* PagedViewCollectionControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +329,7 @@
 		3F2AE0BF1C6E17CD007730C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -314,15 +339,18 @@
 				INFOPLIST_FILE = PageKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pyrolyse.PageKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3F2AE0C01C6E17CD007730C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -332,6 +360,7 @@
 				INFOPLIST_FILE = PageKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pyrolyse.PageKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -379,6 +408,7 @@
 				3F2AE0C01C6E17CD007730C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F2AE0C11C6E17CD007730C3 /* Build configuration list for PBXNativeTarget "PageKitTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +417,7 @@
 				3F2AE0C31C6E17CD007730C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
