@@ -8,6 +8,9 @@
 
 import Cocoa
 
+/**
+ PagedViewCollectionControllerDelegate
+ */
 @available(OSX 10.10, *)
 @objc public protocol PagedViewCollectionControllerDelegate {
     /**

@@ -8,6 +8,9 @@
 
 import Cocoa
 
+/**
+ PagedViewCollectionController
+ */
 @available(OSX 10.10, *)
 public class PageNavigationViewController: NSViewController {
     public enum Position {

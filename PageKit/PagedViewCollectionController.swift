@@ -14,6 +14,9 @@ internal func called(fct: String = __FUNCTION__) {
     print("\(NSDate()): \(fct) called.")
 }
 
+/**
+ PagedViewCollectionController
+ */
 @available(OSX 10.10, *)
 @IBDesignable public class PagedViewCollectionController: NSTabViewController {
     /**
@@ -89,7 +92,7 @@ internal func called(fct: String = __FUNCTION__) {
     public var homeTransition: Transition = .Crossfade
         /// If `true` the default page navigation controller will be used. No page navigation controller will be used otherwise.
         /// - remark: The default value is `false`
-    @IBInspectable public var usePageNavigationController: Bool = false {
+    public var usePageNavigationController: Bool = false {
         didSet { manageNavigationViewController() }
     }
         /// If displayed set the position of the page navigation view.
@@ -106,13 +109,13 @@ internal func called(fct: String = __FUNCTION__) {
         ///
         /// Use this property in order to load the page navigation controller you want to ambed in each page view. If `navigationController` is set this property will be ignored.
         /// - note: Setting this property will embed a page navigation controller regardless the value of `usePageNavigationController`.
-    @IBInspectable public var navigationId: String? {
+    public var navigationId: String? {
         didSet { manageNavigationViewController() }
     }
         /// The name of the storyboard containing the navigation controller.
         /// 
         /// If `nil` the page navigation controller will try to be loaded from the receiver's storyboard.
-    @IBInspectable public var navigationStorybardId: String? {
+    public var navigationStorybardId: String? {
         didSet { manageNavigationViewController() }
     }
         /// `true` if the current page has a next page. `false` otherwise.
@@ -275,7 +278,7 @@ internal func called(fct: String = __FUNCTION__) {
                 return
             }
         }
-        if usePageNavigationController, let controller = PageNavigationViewController(nibName: nil, bundle: NSBundle(identifier: "com.pyrolyse.PageKit")) {
+        if navigationDelegate?.pagedControllerUsesPageNavigationController?(self) ?? usePageNavigationController, let controller = PageNavigationViewController(nibName: nil, bundle: NSBundle(identifier: "com.pyrolyse.PageKit")) {
             loadNavigationViewController(controller)
             return
         }

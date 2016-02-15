@@ -8,6 +8,9 @@
 
 import Cocoa
 
+/**
+ PagedViewController
+ */
 @available(OSX 10.10, *)
 public class PagedViewController: NSViewController {
         /// `true` if the current page has a next page. `false` otherwise.

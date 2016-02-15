@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ PagedViewCollectionNavigationDelegate
+ */
 @available(OSX 10.10, *)
 @objc public protocol PagedViewCollectionNavigationDelegate {
     /**
