@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +641,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SampleStoryboard" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -657,7 +657,7 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="vdH-1r-mcB" kind="relationship" relationship="window.shadowedContentViewController" id="Mro-WT-0EA"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -665,17 +665,161 @@
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="aIx-mg-rSP">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="K4z-gX-c5G" sceneMemberID="viewController">
+                    <view key="view" id="FvQ-kK-NRs">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ZM-6y-46J">
+                                <rect key="frame" x="185" y="133" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K7b-Iz-lCd">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="vdH-1r-mcB" kind="modal" id="0Gi-F9-kKM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="yOC-a1-TQk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-449" y="697"/>
+        </scene>
+        <!--Paged View Collection Controller-->
+        <scene sceneID="47z-PM-dcv">
+            <objects>
+                <tabViewController id="vdH-1r-mcB" customClass="PagedViewCollectionController" customModule="PageKit" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" id="6XM-qX-Boz"/>
+                        <tabViewItem identifier="" id="2Ni-qP-jn4"/>
+                        <tabViewItem id="bZh-k3-ycG"/>
+                    </tabViewItems>
+                    <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
+                    <tabView key="tabView" type="noTabsNoBorder" id="J05-aY-31g">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="usePageNavigationController" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="5KG-Ku-8R6" kind="relationship" relationship="tabItems" id="4mn-DP-GgY"/>
+                        <segue destination="tVf-7j-sOZ" kind="relationship" relationship="tabItems" id="0gw-Hv-aV8"/>
+                        <segue destination="j7B-Pn-WzA" kind="relationship" relationship="tabItems" id="Lv1-cZ-Tks"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="vhv-TI-ues" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="697"/>
+        </scene>
+        <!--Page Controller-->
+        <scene sceneID="moZ-Nd-k6J">
+            <objects>
+                <pagecontroller transitionStyle="horizontalStrip" id="9ee-4v-4v9" sceneMemberID="viewController">
+                    <view key="view" id="MR1-ew-LBU">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </pagecontroller>
+                <customObject id="xg9-jY-UdY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691" y="134"/>
+        </scene>
+        <!--Page 1-->
+        <scene sceneID="ygi-id-Uf3">
+            <objects>
+                <viewController title="Page 1" id="5KG-Ku-8R6" sceneMemberID="viewController">
+                    <view key="view" id="Ibu-HN-syc">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eZx-hR-blZ">
+                                <rect key="frame" x="205" y="103" width="40" height="95"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1" id="XxO-bf-jlG">
+                                    <font key="font" metaFont="system" size="80"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eZx-hR-blZ" secondAttribute="bottom" constant="103" id="03U-wH-bxY"/>
+                            <constraint firstItem="eZx-hR-blZ" firstAttribute="leading" secondItem="Ibu-HN-syc" secondAttribute="leading" constant="207" id="eyo-sW-x2l"/>
+                            <constraint firstAttribute="trailing" secondItem="eZx-hR-blZ" secondAttribute="trailing" constant="207" id="fLh-vb-Fnx"/>
+                            <constraint firstItem="eZx-hR-blZ" firstAttribute="top" secondItem="Ibu-HN-syc" secondAttribute="top" constant="102" id="hvV-YN-mB7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="E5U-tx-XCO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="531"/>
+        </scene>
+        <!--Page 2-->
+        <scene sceneID="UOC-O0-TQj">
+            <objects>
+                <viewController title="Page 2" id="tVf-7j-sOZ" sceneMemberID="viewController">
+                    <view key="view" id="phk-xl-jgF">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8yx-hi-cED">
+                                <rect key="frame" x="200" y="103" width="50" height="95"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="2" id="Xyr-hq-jde">
+                                    <font key="font" metaFont="system" size="80"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8yx-hi-cED" secondAttribute="trailing" constant="202" id="JAm-lJ-yUh"/>
+                            <constraint firstAttribute="bottom" secondItem="8yx-hi-cED" secondAttribute="bottom" constant="103" id="Jpc-Qn-eza"/>
+                            <constraint firstItem="8yx-hi-cED" firstAttribute="top" secondItem="phk-xl-jgF" secondAttribute="top" constant="102" id="pc5-Pf-cyU"/>
+                            <constraint firstItem="8yx-hi-cED" firstAttribute="leading" secondItem="phk-xl-jgF" secondAttribute="leading" constant="202" id="sq1-dG-Zwy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="E44-JJ-RRQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="892"/>
+        </scene>
+        <!--Page 3-->
+        <scene sceneID="e89-KD-fcy">
+            <objects>
+                <viewController title="Page 3" id="j7B-Pn-WzA" sceneMemberID="viewController">
+                    <view key="view" id="ohC-Og-oYO">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CxY-7G-oEb">
+                                <rect key="frame" x="199" y="103" width="52" height="95"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="3" id="WhY-fs-CsY">
+                                    <font key="font" metaFont="system" size="80"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CxY-7G-oEb" secondAttribute="bottom" constant="103" id="2W5-b6-cvK"/>
+                            <constraint firstItem="CxY-7G-oEb" firstAttribute="top" secondItem="ohC-Og-oYO" secondAttribute="top" constant="102" id="MXW-FE-en6"/>
+                            <constraint firstItem="CxY-7G-oEb" firstAttribute="leading" secondItem="ohC-Og-oYO" secondAttribute="leading" constant="201" id="oFA-Di-XxS"/>
+                            <constraint firstAttribute="trailing" secondItem="CxY-7G-oEb" secondAttribute="trailing" constant="201" id="oka-IS-cPf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="S10-Qu-zqc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1266"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Mro-WT-0EA"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -20,6 +20,7 @@
                     <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSGoLeftTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kBr-mm-TNg">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent"></string>
                     </buttonCell>
                     <connections>
                         <action selector="goBackward:" target="-2" id="dLC-c0-Gy8"/>
@@ -35,6 +36,7 @@
                     <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSGoRightTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ch-ZT-fCr">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent"></string>
                     </buttonCell>
                     <connections>
                         <action selector="goForward:" target="-2" id="28l-PL-dm5"/>
@@ -74,7 +76,7 @@
                 <constraint firstItem="Wcx-Df-rWW" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="zIf-n6-ozx"/>
                 <constraint firstItem="Wcx-Df-rWW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BtR-0b-O81" secondAttribute="trailing" constant="8" id="zUe-R8-2FS"/>
             </constraints>
-            <point key="canvasLocation" x="367" y="342.5"/>
+            <point key="canvasLocation" x="311" y="339.5"/>
         </customView>
     </objects>
     <resources>

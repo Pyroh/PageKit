@@ -7,8 +7,10 @@
 //
 
 import Cocoa
-
-public func called(fct: String = __FUNCTION__) {
+/**
+ Self explenatory
+ */
+internal func called(fct: String = __FUNCTION__) {
     print("\(NSDate()): \(fct) called.")
 }
 
@@ -77,17 +79,19 @@ public func called(fct: String = __FUNCTION__) {
     }
     
         /// Tell the controller if it should animate transiton to next page.
-        /// - remark: The default value is `Crossfade`
-    public var forwardTransition: Transition = .Crossfade
+        /// - remark: The default value is `SlideForward`
+    public var forwardTransition: Transition = .SlideForward
         /// Tell the controller if it should animate transiton to previous page.
-        /// - remark: The default value is `Crossfade`
-    public var backwardTransition: Transition = .Crossfade
+        /// - remark: The default value is `SlideBackward`
+    public var backwardTransition: Transition = .SlideBackward
         /// Tell the controller if it should animate transiton back to the first page.
         /// - remark: The default value is `Crossfade`
     public var homeTransition: Transition = .Crossfade
         /// If `true` the default page navigation controller will be used. No page navigation controller will be used otherwise.
         /// - remark: The default value is `false`
-    public var usePageNavigationController: Bool = true
+    @IBInspectable public var usePageNavigationController: Bool = false {
+        didSet { manageNavigationViewController() }
+    }
         /// If displayed set the position of the page navigation view.
         /// - remark: The default value is `Top`
     public var navigationViewPosition: PageNavigationViewController.Position = .Top
@@ -111,8 +115,6 @@ public func called(fct: String = __FUNCTION__) {
     @IBInspectable public var navigationStorybardId: String? {
         didSet { manageNavigationViewController() }
     }
-    //TODO: doc
-    public var result: Any?
         /// `true` if the current page has a next page. `false` otherwise.
     public dynamic var canGoForward: Bool {
         return selectedTabViewItemIndex < tabViewItems.count - 1
@@ -141,11 +143,26 @@ public func called(fct: String = __FUNCTION__) {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        tabView.delegate = self
         tabStyle = .Unspecified
         tabView.tabViewType = .NoTabsNoBorder
         userInteraction = transitionOptions.contains(.AllowUserInteraction)
         installStackView()
         manageNavigationViewController()
+        if canPropagateSelectedChildViewControllerTitle, let title = tabView.selectedTabViewItem?.viewController?.title {
+            tabView.window?.title = title
+        }
+    }
+    
+    public override func swipeWithEvent(event: NSEvent) {
+        print(event)
+    }
+    
+    public override func tabView(tabView: NSTabView, didSelectTabViewItem tabViewItem: NSTabViewItem?) {
+        super.tabView(tabView, didSelectTabViewItem: tabViewItem)
+        if canPropagateSelectedChildViewControllerTitle, let title = tabViewItem?.viewController?.title {
+            tabView.window?.title = title
+        }
     }
     
     /**
@@ -178,6 +195,8 @@ public func called(fct: String = __FUNCTION__) {
     @IBAction public final func goHome(sender: AnyObject?) {
         home()
     }
+    
+    
     
     private func forward() {
         guard canGoForward else { return }
@@ -230,19 +249,15 @@ public func called(fct: String = __FUNCTION__) {
         superView?.addSubview(stackView!)
         if #available(OSX 10.11, *) {
             stackView?.topAnchor.constraintEqualToAnchor(superView?.topAnchor).active = true
-        } else {
-            // Fallback on earlier versions
-        }
-        if #available(OSX 10.11, *) {
             stackView?.bottomAnchor.constraintEqualToAnchor(superView?.bottomAnchor).active = true
+            stackView?.leadingAnchor.constraintEqualToAnchor(superView?.leadingAnchor).active = true
+            stackView?.trailingAnchor.constraintEqualToAnchor(superView?.trailingAnchor).active = true
         } else {
             // Fallback on earlier versions
         }
-        
     }
     
     private func manageNavigationViewController() {
-        called()
         if let delegate = navigationDelegate {
             if let controller = delegate.navigationControllerForPagedController?(self) {
                 loadNavigationViewController(controller)
@@ -260,7 +275,7 @@ public func called(fct: String = __FUNCTION__) {
                 return
             }
         }
-        if usePageNavigationController, let controller = PageNavigationViewController(nibName: nil, bundle: nil) {
+        if usePageNavigationController, let controller = PageNavigationViewController(nibName: nil, bundle: NSBundle(identifier: "com.pyrolyse.PageKit")) {
             loadNavigationViewController(controller)
             return
         }
@@ -279,7 +294,6 @@ public func called(fct: String = __FUNCTION__) {
         case .Bottom:
             stackView?.addView(navigationView, inGravity: .Bottom)
         }
-        stackView?.needsLayout = true
     }
     
     private func unloadNavigationViewController() {

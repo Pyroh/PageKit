@@ -15,24 +15,24 @@ public class PageNavigationViewController: NSViewController {
         case Bottom
     }
         /// `true` if the current page has a next page. `false` otherwise.
-    public dynamic var canGoForward: Bool = true
+    public internal(set) dynamic var canGoForward: Bool = true
         /// `true` if the current page has a previous page. `false` otherwise.
-    public dynamic var canGoBackward: Bool = true
+    public internal(set) dynamic var canGoBackward: Bool = true
         /// `true` if the current page is not the home page. `false` otherwise.
-    public dynamic var canGoHome: Bool = true
+    public internal(set) dynamic var canGoHome: Bool = true
         /// The current page index.
-    public dynamic var currentPageIndex: Int = 0
+    public internal(set) dynamic var currentPageIndex: Int = 0
         /// Return the number of pages.
-    public dynamic var pageCount: Int = 0
+    public internal(set) dynamic var pageCount: Int = 0
     
-    internal dynamic weak var pagedController: PagedViewCollectionController!
-    
-    public override func viewDidLoad() {
-        bind("canGoForward", toObject: pagedController, withKeyPath: "canGoForward", options: nil)
-        bind("canGoBackward", toObject: pagedController, withKeyPath: "canGoBackward", options: nil)
-        bind("canGoHome", toObject: pagedController, withKeyPath: "canGoHome", options: nil)
-        bind("currentPageIndex", toObject: pagedController, withKeyPath: "currentPageIndex", options: nil)
-        bind("pageCount", toObject: pagedController, withKeyPath: "pageCount", options: nil)
+    internal dynamic weak var pagedController: PagedViewCollectionController! {
+        didSet {
+            bind("canGoForward", toObject: pagedController, withKeyPath: "canGoForward", options: nil)
+            bind("canGoBackward", toObject: pagedController, withKeyPath: "canGoBackward", options: nil)
+            bind("canGoHome", toObject: pagedController, withKeyPath: "canGoHome", options: nil)
+            bind("currentPageIndex", toObject: pagedController, withKeyPath: "currentPageIndex", options: nil)
+            bind("pageCount", toObject: pagedController, withKeyPath: "pageCount", options: nil)
+        }
     }
     
     deinit {

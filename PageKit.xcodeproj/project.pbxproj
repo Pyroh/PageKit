@@ -83,12 +83,10 @@
 		3F2AE0AC1C6E17CD007730C3 /* PageKit */ = {
 			isa = PBXGroup;
 			children = (
-				3F2AE0C41C6E1852007730C3 /* PagedViewCollectionController.swift */,
-				3F2AE0C51C6E1852007730C3 /* PagedViewCollectionControllerDelegate.swift */,
-				3F2AE0C61C6E1852007730C3 /* PagedViewCollectionNavigationDelegate.swift */,
+				3F2AE0F21C6E2018007730C3 /* Delegates */,
+				3F2AE0F31C6E2024007730C3 /* Navigator */,
 				3F2AE0C71C6E1852007730C3 /* PagedViewController.swift */,
-				3F2AE0C81C6E1852007730C3 /* PageNavigationViewController.swift */,
-				3F2AE0C91C6E1852007730C3 /* PageNavigationViewController.xib */,
+				3F2AE0C41C6E1852007730C3 /* PagedViewCollectionController.swift */,
 				3F2AE0AD1C6E17CD007730C3 /* PageKit.h */,
 				3F2AE0AF1C6E17CD007730C3 /* Info.plist */,
 			);
@@ -102,6 +100,24 @@
 				3F2AE0BB1C6E17CD007730C3 /* Info.plist */,
 			);
 			path = PageKitTests;
+			sourceTree = "<group>";
+		};
+		3F2AE0F21C6E2018007730C3 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				3F2AE0C51C6E1852007730C3 /* PagedViewCollectionControllerDelegate.swift */,
+				3F2AE0C61C6E1852007730C3 /* PagedViewCollectionNavigationDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		3F2AE0F31C6E2024007730C3 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				3F2AE0C81C6E1852007730C3 /* PageNavigationViewController.swift */,
+				3F2AE0C91C6E1852007730C3 /* PageNavigationViewController.xib */,
+			);
+			name = Navigator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

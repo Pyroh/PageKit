@@ -11,8 +11,12 @@ import Foundation
 @available(OSX 10.10, *)
 @objc public protocol PagedViewCollectionNavigationDelegate {
     /**
-     - TODO: documention
-     */
+    Tells the paged view collection controller to use or not a navigation view.
+    
+    - parameter controller: The paged view collection controller that should embed the page navigation view.
+    
+    - returns: `true` if you want to use the default navigation controller. `false` otherwise.
+    */
     optional func pagedControllerUsesPageNavigationController(controller: PagedViewCollectionController) -> Bool
     
     /**
