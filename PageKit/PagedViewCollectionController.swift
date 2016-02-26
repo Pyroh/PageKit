@@ -10,7 +10,7 @@ import Cocoa
 /**
  Self explenatory
  */
-internal func called(fct: String = __FUNCTION__) {
+internal func called(fct: String = #function) {
     print("\(NSDate()): \(fct) called.")
 }
 
@@ -146,6 +146,7 @@ internal func called(fct: String = __FUNCTION__) {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        tabView.drawsBackground = false
         tabView.delegate = self
         tabStyle = .Unspecified
         tabView.tabViewType = .NoTabsNoBorder
@@ -198,8 +199,6 @@ internal func called(fct: String = __FUNCTION__) {
     @IBAction public final func goHome(sender: AnyObject?) {
         home()
     }
-    
-    
     
     private func forward() {
         guard canGoForward else { return }
@@ -261,6 +260,7 @@ internal func called(fct: String = __FUNCTION__) {
     }
     
     private func manageNavigationViewController() {
+        if tabView.tabViewItems.isEmpty { unloadNavigationViewController() }
         if let delegate = navigationDelegate {
             if let controller = delegate.navigationControllerForPagedController?(self) {
                 loadNavigationViewController(controller)
